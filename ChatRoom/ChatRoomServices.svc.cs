@@ -17,9 +17,6 @@ namespace ChatRoom {
             throw new NotImplementedException();
         }
 
-        public void DoWork() {
-        }
-
         public bool Login(string userName) {
             throw new NotImplementedException();
         }

@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ChatRoom;
 
 namespace ChatRoomMain
 {
@@ -28,6 +29,13 @@ namespace ChatRoomMain
 
         private void Login(object sender, RoutedEventArgs e)
         {
+            ChatRoomServices service = new ChatRoomServices();
+            string userName = this.textBox.Text;
+            bool success = service.Login(userName);
+            if (!success) {
+                MessageBox.Show("This user name is already been used.");
+                return;
+            }
             ImageBrush myBrush = new ImageBrush();
             myBrush.ImageSource = new BitmapImage(new Uri(@"C:\Sources\TFS\OnlineChatRoom\Heads\Fangyang.png", UriKind.Absolute));
             this.Background = null;

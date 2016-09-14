@@ -9,7 +9,7 @@
     <Window.Background>
         <ImageBrush ImageSource="Heads/welcomeback.png"/>
     </Window.Background>
-    <Grid>
+    <Grid x:Name="LoginGrid">
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
