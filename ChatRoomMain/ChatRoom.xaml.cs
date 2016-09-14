@@ -21,7 +21,9 @@ namespace ChatRoomMain
     public partial class ChatRoom : Window
     {
         private string name;
-        
+        // Save the previous message been sent.
+        private string preMessage;
+
         public ChatRoom(string name)
         {
             InitializeComponent();
@@ -29,15 +31,21 @@ namespace ChatRoomMain
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
+
         private void Send_Click(object sender, RoutedEventArgs e) {
             ChatRoomServices addMessage = new ChatRoomServices();
-            if (this.messageBox.Text != "") {
-                string message = this.messageBox.Text;
-                string newMessage = $"{name}: {message}";
-                addMessage.Add(newMessage);
-                this.listBox.Items.Add(newMessage);
-                messageBox.Text = "";
-            }
+            string message = this.messageBox.Text;
+            string newMessage = $"{name}: {message}";
+            addMessage.Add(newMessage);
+            preMessage = newMessage;
+            messageBox.Text = "";
+        }
+
+        private void RecallButton_Click(object sender, RoutedEventArgs e) {
+            if (preMessage == "") return;
+            ChatRoomServices service = new ChatRoomServices();
+            service.Delete(preMessage);
+            preMessage = "";
         }
     }
 }
