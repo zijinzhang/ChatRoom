@@ -23,11 +23,14 @@ namespace ChatRoomMain
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void Login(object sender, RoutedEventArgs e)
         {
-            ImageSource a = null;
+            ImageBrush myBrush = new ImageBrush();
+            myBrush.ImageSource = new BitmapImage(new Uri(@"C:\Sources\TFS\OnlineChatRoom\Heads\Fangyang.png", UriKind.Absolute));
+            this.Background = null;
         }
     }
 }
