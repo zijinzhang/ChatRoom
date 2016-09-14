@@ -23,7 +23,6 @@ namespace ChatRoomMain
     public partial class ChatRoom : Window
     {
         private string name;
-        // Save the previous message been sent.
         private string preMessage;
 
         public ChatRoom(string name)
