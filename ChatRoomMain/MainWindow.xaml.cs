@@ -32,6 +32,7 @@ namespace ChatRoomMain
             ChatRoomServices service = new ChatRoomServices();
             string userName = this.textBox.Text;
             bool success = service.Login(userName);
+
             if (!success) {
                 MessageBox.Show("This user name is already been used.");
                 return;
@@ -40,6 +41,18 @@ namespace ChatRoomMain
             App.Current.MainWindow = chatRoom;
             this.Close();
             chatRoom.Show();
+        }
+
+        private void button_KeyDown(object sender, KeyEventArgs e) {
+            if (e.Key == Key.Enter) {
+                Login(sender, e);
+            }
+        }
+
+        private void textBox_KeyDown(object sender, KeyEventArgs e) {
+            if (e.Key == Key.Enter) {
+                Login(sender, e);
+            }
         }
     }
 }

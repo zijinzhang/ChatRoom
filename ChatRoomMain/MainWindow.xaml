@@ -13,7 +13,7 @@
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="textBox" Height="23" Margin="206,379,0,0" TextWrapping="Wrap" Width="170" BorderBrush="#FF383838" BorderThickness="2" Background="White" FontFamily="Century Gothic" SelectionBrush="#FF383838" Foreground="#FF383838" RenderTransformOrigin="0.5,0.5" TextAlignment="Center" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top">
+        <TextBox x:Name="textBox" Height="23" Margin="206,379,0,0" TextWrapping="Wrap" Width="170" BorderBrush="#FF383838" BorderThickness="2" Background="White" FontFamily="Century Gothic" SelectionBrush="#FF383838" Foreground="#FF383838" RenderTransformOrigin="0.5,0.5" TextAlignment="Center" FontWeight="Bold" FontSize="14" HorizontalAlignment="Left" VerticalAlignment="Top" KeyDown="textBox_KeyDown">
             <TextBox.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
@@ -23,7 +23,7 @@
                 </TransformGroup>
             </TextBox.RenderTransform>
         </TextBox>
-        <Button x:Name="button" Content="Go!" HorizontalAlignment="Left" Margin="414,377,0,0" VerticalAlignment="Top" Width="75" BorderThickness="2" Background="#FF383838" BorderBrush="#FF5F5D5D" Foreground="White" FontFamily="Ravie" RenderTransformOrigin="0.5,0.5" FontSize="13" Click="Login">
+        <Button x:Name="button" Content="Go!" HorizontalAlignment="Left" Margin="414,377,0,0" VerticalAlignment="Top" Width="75" BorderThickness="2" Background="#FF383838" BorderBrush="#FF5F5D5D" Foreground="White" FontFamily="Ravie" RenderTransformOrigin="0.5,0.5" FontSize="13" Click="Login" KeyDown="button_KeyDown">
             <Button.RenderTransform>
                 <TransformGroup>
                     <ScaleTransform/>
