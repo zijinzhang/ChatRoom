@@ -14,6 +14,6 @@ namespace ChatRoom {
         [OperationContract]
         void Delete(string message);
         [OperationContract]
-        LinkedList<string> ShowMessage();
+        IEnumerable<string> ShowMessage(); 
     }
 }
