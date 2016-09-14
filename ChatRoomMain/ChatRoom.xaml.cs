@@ -12,6 +12,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
 using ChatRoom;
+using System.Threading;
+using System.Windows.Threading;
 
 namespace ChatRoomMain
 {
@@ -30,6 +32,19 @@ namespace ChatRoomMain
             this.name = name;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.RecallButton.IsEnabled = false;
+            DispatcherTimer timer = new DispatcherTimer();
+            timer.Start();
+            timer.Tick += Timer_Tick;
+        }
+
+        private void Timer_Tick(object sender, EventArgs e) {
+            listBox.Items.Clear();
+            ChatRoomServices CRS = new ChatRoomServices();
+            IEnumerable<string> messages = new LinkedList<string>();
+            messages = CRS.ShowMessage();
+            foreach (var item in messages) {
+                listBox.Items.Add(item);
+            }
         }
 
         //send message when click send button
