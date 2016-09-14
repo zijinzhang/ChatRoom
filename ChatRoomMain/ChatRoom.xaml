@@ -5,9 +5,19 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatRoomMain"
         mc:Ignorable="d"
-        Title="ChatRoom" Height="300" Width="300">
+        Title="ChatRoom" Height="600" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center">
     <Grid>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="204,67,0,0" VerticalAlignment="Top" Width="75" Click="button_Click"/>
-        <TextBox x:Name="textBox" HorizontalAlignment="Left" Height="23" Margin="151,164,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="120" TextChanged="textBox_TextChanged"/>
+        <ListView x:Name="listView" HorizontalAlignment="Left" Height="357" Margin="10,36,0,0" VerticalAlignment="Top" Width="472">
+            <ListView.View>
+                <GridView>
+                    <GridViewColumn/>
+                </GridView>
+            </ListView.View>
+        </ListView>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="139" Margin="10,414,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="351"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="394,414,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="394,482,0,0" VerticalAlignment="Top" Width="75"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+
     </Grid>
 </Window>

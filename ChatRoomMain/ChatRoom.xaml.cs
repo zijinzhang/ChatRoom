@@ -25,16 +25,8 @@ namespace ChatRoomMain
         {
             InitializeComponent();
             this.name = name;
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
-        private void button_Click(object sender, RoutedEventArgs e)
-        {
-            MessageBox.Show(name);
-        }
-
-        private void textBox_TextChanged(object sender, TextChangedEventArgs e)
-        {
-
-        }
     }
 }
