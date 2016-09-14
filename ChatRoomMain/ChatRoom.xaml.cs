@@ -26,7 +26,6 @@ namespace ChatRoomMain
     {
         private string name;
         private string preMessage;
-        int count = 0;
 
         public ChatRoom(string name)
         {
@@ -38,6 +37,7 @@ namespace ChatRoomMain
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Start();
             timer.Tick += Timer_Tick;
+            UserNameLabel.Content = $"Welcome back {name}!!";
         }
 
         private void Timer_Tick(object sender, EventArgs e) {
@@ -54,11 +54,10 @@ namespace ChatRoomMain
         private void Send_Click(object sender, RoutedEventArgs e) {
             if (this.messageBox.Text != "") {
                 ChatRoomSe1rvicesClient addMessage = new ChatRoomSe1rvicesClient();
-                count++;
                 string message = this.messageBox.Text;
-                string newMessage = $"{name}: {message} {count}";
+                string newMessage = $"{name}: {message}";
                 addMessage.Add(newMessage);
-                this.listBox.Items.Add(newMessage);
+               // this.listBox.Items.Add(newMessage);
                 preMessage = newMessage;
                 messageBox.Text = "";
                 this.RecallButton.IsEnabled = true;
@@ -82,8 +81,10 @@ namespace ChatRoomMain
         }
 
         private void Log_out_Click(object sender, RoutedEventArgs e) {
+            ChatRoomSe1rvicesClient closeButton = new ChatRoomSe1rvicesClient();
             MainWindow mainWindows = new MainWindow();
             App.Current.MainWindow = mainWindows;
+            closeButton.Logout(name);
             this.Close();
             mainWindows.Show();
         }
