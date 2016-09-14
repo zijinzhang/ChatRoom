@@ -135,7 +135,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Heads\welcomeback.png" />
+    <ProjectReference Include="..\ChatRoom\ChatRoom.csproj">
+      <Project>{66551679-8129-4730-9f97-e8efc44930f3}</Project>
+      <Name>ChatRoom</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Heads\welcomeback.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ChatRoom\ChatRoom.csproj">
