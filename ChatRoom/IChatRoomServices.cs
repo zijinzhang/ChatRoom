@@ -10,6 +10,10 @@ namespace ChatRoom {
     [ServiceContract]
     public interface IChatRoomServices {
         [OperationContract]
-        void DoWork();
+        void Add(string message);
+        [OperationContract]
+        void Delete(string message);
+        [OperationContract]
+        LinkedList<string> ShowMessage();
     }
 }
