@@ -26,8 +26,8 @@ namespace ChatRoomMain
             InitializeComponent();
             this.name = name;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            
             UserNameLabel.Content = $"Welcome back {name}!!";
-
         }
 
     }
