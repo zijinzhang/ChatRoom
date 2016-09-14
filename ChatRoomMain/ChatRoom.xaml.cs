@@ -29,6 +29,7 @@ namespace ChatRoomMain
             InitializeComponent();
             this.name = name;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.RecallButton.IsEnabled = false;
         }
 
 
@@ -39,6 +40,7 @@ namespace ChatRoomMain
             addMessage.Add(newMessage);
             preMessage = newMessage;
             messageBox.Text = "";
+            this.RecallButton.IsEnabled = true;
         }
 
         private void RecallButton_Click(object sender, RoutedEventArgs e) {
@@ -46,6 +48,7 @@ namespace ChatRoomMain
             ChatRoomServices service = new ChatRoomServices();
             service.Delete(preMessage);
             preMessage = "";
+            this.RecallButton.IsEnabled = false;
         }
     }
 }
