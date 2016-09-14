@@ -12,7 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
-using ChatRoom;
+using ChatRoomMain.ChatRoomServices;
 
 namespace ChatRoomMain
 {
@@ -29,9 +29,14 @@ namespace ChatRoomMain
 
         private void Login(object sender, RoutedEventArgs e)
         {
-            ChatRoomServices service = new ChatRoomServices();
+            ChatRoomSe1rvicesClient service = new ChatRoomSe1rvicesClient();
+            if (textBox.Text == "") {
+                MessageBox.Show("Please enter your username");
+                return;
+            }
             string userName = this.textBox.Text;
             bool success = service.Login(userName);
+
             if (!success) {
                 MessageBox.Show("This user name is already been used.");
                 return;
@@ -40,6 +45,18 @@ namespace ChatRoomMain
             App.Current.MainWindow = chatRoom;
             this.Close();
             chatRoom.Show();
+        }
+
+        private void button_KeyDown(object sender, KeyEventArgs e) {
+            if (e.Key == Key.Enter) {
+                Login(sender, e);
+            }
+        }
+
+        private void textBox_KeyDown(object sender, KeyEventArgs e) {
+            if (e.Key == Key.Enter) {
+                Login(sender, e);
+            }
         }
     }
 }

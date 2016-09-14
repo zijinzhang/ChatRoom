@@ -5,21 +5,15 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatRoomMain"
         mc:Ignorable="d"
-        Title="ChatRoom" Height="700" Width="800" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center">
-    <Window.Background>
-        <ImageBrush/>
-    </Window.Background>
+        Title="ChatRoom" Height="600" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center">
+    <Grid>
+        <TextBox x:Name="messageBox" HorizontalAlignment="Left" Height="139" Margin="10,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" KeyDown="messageBox_KeyDown"/>
+        <Button x:Name="Send" Content="Send" HorizontalAlignment="Left" Margin="394,414,0,0" VerticalAlignment="Top" Width="75" Click="Send_Click"/>
+        <Button x:Name="RecallButton" Content="Recall" HorizontalAlignment="Left" Margin="394,482,0,0" VerticalAlignment="Top" Width="75" Click="RecallButton_Click"/>
 
-    <Grid Margin="0,0,0,-2">
-        <Grid.Background>
-            <ImageBrush ImageSource="Heads/ChatFrame.jpg"/>
-        </Grid.Background>
-        <TextBox x:Name="messageBox" HorizontalAlignment="Left" Height="99" Margin="79,488,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="645" BorderBrush="{DynamicResource {x:Static SystemColors.WindowBrushKey}}" BorderThickness="0" Foreground="Black" SelectionBrush="White" Background="White" FontFamily="Comic Sans MS"/>
-        <Button x:Name="Send" Margin="71,0,0,38" VerticalAlignment="Bottom" Height="17" Content="Send" Foreground="#FF252424" Background="White" BorderBrush="White" Width="56" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-        <Label x:Name="UserNameLabel" Content="nameLabel" HorizontalAlignment="Left" Margin="74,54,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="#FF383838" FontSize="14"/>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="373" Margin="79,80,0,0" VerticalAlignment="Top" Width="645" BorderBrush="White" FontFamily="Comic Sans MS"/>
-        <Button x:Name="RecallButton" Margin="215,0,518,33" VerticalAlignment="Bottom" Height="17" Content="Recall" Foreground="#FF252424" Background="White" BorderBrush="White" Width="56" TextOptions.TextHintingMode="Fixed" FontFamily="Comic Sans MS" FontWeight="Bold"/>
-        <Button x:Name="Log_out" Margin="574,0,165,38" VerticalAlignment="Bottom" Height="17" Content="Logout" Foreground="#FF252424" Background="White" BorderBrush="White" TextOptions.TextHintingMode="Fixed" FontFamily="Comic Sans MS" FontWeight="Bold"/>
+        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="368" Margin="10,36,0,0" VerticalAlignment="Top" Width="459"/>
+        <Button x:Name="Log_out" Content="Log out" HorizontalAlignment="Left" Margin="394,541,0,0" VerticalAlignment="Top" Width="75" Click="Log_out_Click"/>
 
     </Grid>
 </Window>
