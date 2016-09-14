@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -46,6 +47,19 @@ namespace ChatRoomMain
             ChatRoomServices service = new ChatRoomServices();
             service.Delete(preMessage);
             preMessage = "";
+        }
+        protected override void OnClosing(CancelEventArgs e) {
+            ChatRoomServices xButton = new ChatRoomServices();
+            xButton.Logout(name);
+            base.OnClosing(e);
+        }
+
+        private void Logout_button(object sender,RoutedEventArgs e) {
+            MainWindow mainWindow = new MainWindow();
+            App.Current.MainWindow = mainWindow;
+            this.Close();
+            mainWindow.Show();
+      
         }
     }
 }
