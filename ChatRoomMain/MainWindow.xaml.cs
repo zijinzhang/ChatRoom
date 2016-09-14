@@ -12,6 +12,7 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using ChatRoom;
 
 namespace ChatRoomMain
 {
@@ -23,12 +24,21 @@ namespace ChatRoomMain
         public MainWindow()
         {
             InitializeComponent();
+            WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
         private void Login(object sender, RoutedEventArgs e)
         {
-
-            textBox.Text = "dasdf";
+            ChatRoomServices service = new ChatRoomServices();
+            string userName = this.textBox.Text;
+            bool success = service.Login(userName);
+            if (!success) {
+                MessageBox.Show("This user name is already been used.");
+                return;
+            }
+            ImageBrush myBrush = new ImageBrush();
+            myBrush.ImageSource = new BitmapImage(new Uri(@"C:\Users\yujun\OneDrive\Pictures\374167366961355821.jpg", UriKind.Absolute));
+            this.Background = null;
         }
     }
 }
