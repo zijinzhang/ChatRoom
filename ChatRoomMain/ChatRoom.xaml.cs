@@ -34,14 +34,16 @@ namespace ChatRoomMain
 
         //send message when click send button
         private void Send_Click(object sender, RoutedEventArgs e) {
-            ChatRoomServices addMessage = new ChatRoomServices();
-            string message = this.messageBox.Text;
-            string newMessage = $"{name}: {message}";
-            addMessage.Add(newMessage);
-            this.listBox.Items.Add(newMessage);
-            preMessage = newMessage;
-            messageBox.Text = "";
-            this.RecallButton.IsEnabled = true;
+            if (this.messageBox.Text != "") {
+                ChatRoomServices addMessage = new ChatRoomServices();
+                string message = this.messageBox.Text;
+                string newMessage = $"{name}: {message}";
+                addMessage.Add(newMessage);
+                this.listBox.Items.Add(newMessage);
+                preMessage = newMessage;
+                messageBox.Text = "";
+                this.RecallButton.IsEnabled = true;
+            }
         }
 
         //delete user's last message
