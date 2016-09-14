@@ -70,6 +70,10 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Page Include="ChatRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
     <Page Include="MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
@@ -77,6 +81,9 @@
     <Compile Include="App.xaml.cs">
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="ChatRoom.xaml.cs">
+      <DependentUpon>ChatRoom.xaml</DependentUpon>
     </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
@@ -135,7 +142,13 @@
     </BootstrapperPackage>
   </ItemGroup>
   <ItemGroup>
-    <Resource Include="Heads\welcomeback.png" />
+    <ProjectReference Include="..\ChatRoom\ChatRoom.csproj">
+      <Project>{66551679-8129-4730-9f97-e8efc44930f3}</Project>
+      <Name>ChatRoom</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Heads\welcomeback.jpg" />
   </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\ChatRoom\ChatRoom.csproj">
