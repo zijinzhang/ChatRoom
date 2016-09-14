@@ -24,5 +24,10 @@ namespace ChatRoomMain
         {
             InitializeComponent();
         }
+
+        private void Login(object sender, RoutedEventArgs e)
+        {
+            ImageSource a = null;
+        }
     }
 }
