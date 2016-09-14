@@ -29,19 +29,18 @@ namespace ChatRoomMain
             InitializeComponent();
             this.name = name;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
+            this.RecallButton.IsEnabled = false;
         }
 
 
         private void Send_Click(object sender, RoutedEventArgs e) {
-            if (this.messageBox.Text != "") {
-                ChatRoomServices addMessage = new ChatRoomServices();
-                string message = this.messageBox.Text;
-                string newMessage = $"{name}: {message}";
-                addMessage.Add(newMessage);
-                preMessage = newMessage;
-                //this.listBox.Items.Add(newMessage) ;
-                messageBox.Text = "";
-            }
+            ChatRoomServices addMessage = new ChatRoomServices();
+            string message = this.messageBox.Text;
+            string newMessage = $"{name}: {message}";
+            addMessage.Add(newMessage);
+            preMessage = newMessage;
+            messageBox.Text = "";
+            this.RecallButton.IsEnabled = true;
         }
 
         private void RecallButton_Click(object sender, RoutedEventArgs e) {
@@ -49,6 +48,7 @@ namespace ChatRoomMain
             ChatRoomServices service = new ChatRoomServices();
             service.Delete(preMessage);
             preMessage = "";
+            this.RecallButton.IsEnabled = false;
         }
     }
 }
