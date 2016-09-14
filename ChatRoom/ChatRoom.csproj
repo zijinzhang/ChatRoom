@@ -61,10 +61,15 @@
     <Reference Include="System.Xml.Linq" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="ChatRoomServices.svc" />
     <Content Include="HtmlPage1.html" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ChatRoomServices.svc.cs">
+      <DependentUpon>ChatRoomServices.svc</DependentUpon>
+    </Compile>
+    <Compile Include="IChatRoomServices.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
