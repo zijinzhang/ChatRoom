@@ -44,6 +44,6 @@ namespace ChatRoom {
         /// </summary>
         /// <param name="userName"></param>
         [OperationContract]
-        void Logout(string userName);
+        string Logout(string userName);
     }
 }

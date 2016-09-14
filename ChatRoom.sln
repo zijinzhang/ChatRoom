@@ -9,6 +9,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "WPFTest", "WPFTest\WPFTest.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ChatRoomMain", "ChatRoomMain\ChatRoomMain.csproj", "{29A3B22E-09D9-4145-A098-B0A1030D761F}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ServerTest", "ServerTest\ServerTest.csproj", "{D0196150-D821-4053-9404-6D39F527DE10}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +29,10 @@ Global
 		{29A3B22E-09D9-4145-A098-B0A1030D761F}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{29A3B22E-09D9-4145-A098-B0A1030D761F}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{29A3B22E-09D9-4145-A098-B0A1030D761F}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D0196150-D821-4053-9404-6D39F527DE10}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D0196150-D821-4053-9404-6D39F527DE10}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D0196150-D821-4053-9404-6D39F527DE10}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D0196150-D821-4053-9404-6D39F527DE10}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
