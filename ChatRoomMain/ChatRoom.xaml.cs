@@ -81,8 +81,10 @@ namespace ChatRoomMain
         }
 
         private void Log_out_Click(object sender, RoutedEventArgs e) {
+            ChatRoomSe1rvicesClient closeButton = new ChatRoomSe1rvicesClient();
             MainWindow mainWindows = new MainWindow();
             App.Current.MainWindow = mainWindows;
+            closeButton.Logout(name);
             this.Close();
             mainWindows.Show();
         }
