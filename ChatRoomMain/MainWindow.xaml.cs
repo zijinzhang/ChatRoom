@@ -36,9 +36,10 @@ namespace ChatRoomMain
                 MessageBox.Show("This user name is already been used.");
                 return;
             }
-            ImageBrush myBrush = new ImageBrush();
-            myBrush.ImageSource = new BitmapImage(new Uri(@"C:\Users\yujun\OneDrive\Pictures\374167366961355821.jpg", UriKind.Absolute));
-            this.Background = myBrush;
+            ChatRoom chatRoom = new ChatRoom(userName);
+            App.Current.MainWindow = chatRoom;
+            this.Close();
+            chatRoom.Show();
         }
     }
 }
