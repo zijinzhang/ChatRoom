@@ -16,7 +16,9 @@ namespace ChatRoom {
                 allMessages.RemoveFirst();
                 allMessages.AddLast(message);
             }
-            allMessages.AddLast(message);
+            else {
+                allMessages.AddLast(message);
+            }
         }
 
         public void Delete(string message) {

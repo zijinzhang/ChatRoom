@@ -14,6 +14,8 @@ using System.Windows.Shapes;
 using ChatRoom;
 using System.Threading;
 using System.Windows.Threading;
+using System.ComponentModel;
+using ChatRoomMain.ChatRoomServices;
 
 namespace ChatRoomMain
 {
@@ -33,24 +35,25 @@ namespace ChatRoomMain
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
             this.RecallButton.IsEnabled = false;
             DispatcherTimer timer = new DispatcherTimer();
+            timer.Interval = new TimeSpan(0, 0, 1);
             timer.Start();
             timer.Tick += Timer_Tick;
         }
 
         private void Timer_Tick(object sender, EventArgs e) {
             listBox.Items.Clear();
-            ChatRoomServices CRS = new ChatRoomServices();
+            ChatRoomSe1rvicesClient CRS = new ChatRoomSe1rvicesClient();
             IEnumerable<string> messages = new LinkedList<string>();
             messages = CRS.ShowMessage();
             foreach (var item in messages) {
-                listBox.Items.Add(item);
+            listBox.Items.Add(item);
             }
         }
 
         //send message when click send button
         private void Send_Click(object sender, RoutedEventArgs e) {
             if (this.messageBox.Text != "") {
-                ChatRoomServices addMessage = new ChatRoomServices();
+                ChatRoomSe1rvicesClient addMessage = new ChatRoomSe1rvicesClient();
                 string message = this.messageBox.Text;
                 string newMessage = $"{name}: {message}";
                 addMessage.Add(newMessage);
@@ -64,7 +67,7 @@ namespace ChatRoomMain
         //delete user's last message
         private void RecallButton_Click(object sender, RoutedEventArgs e) {
             if (preMessage == "") return;
-            ChatRoomServices service = new ChatRoomServices();
+            ChatRoomSe1rvicesClient service = new ChatRoomSe1rvicesClient();
             service.Delete(preMessage);
             preMessage = "";
             this.RecallButton.IsEnabled = false;
@@ -75,6 +78,18 @@ namespace ChatRoomMain
             if (e.Key == Key.Enter && (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control){
                 Send_Click(sender, e);
             }
+        }
+
+        private void Log_out_Click(object sender, RoutedEventArgs e) {
+            MainWindow mainWindows = new MainWindow();
+            App.Current.MainWindow = mainWindows;
+            this.Close();
+            mainWindows.Show();
+        }
+        protected override void OnClosing(CancelEventArgs e) {
+            ChatRoomSe1rvicesClient closeButton = new ChatRoomSe1rvicesClient();
+            closeButton.Logout(name);
+            base.OnClosing(e);
         }
     }
 }
