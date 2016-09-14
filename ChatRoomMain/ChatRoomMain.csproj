@@ -137,6 +137,12 @@
   <ItemGroup>
     <Resource Include="Heads\welcomeback.png" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\ChatRoom\ChatRoom.csproj">
+      <Project>{66551679-8129-4730-9f97-e8efc44930f3}</Project>
+      <Name>ChatRoom</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
