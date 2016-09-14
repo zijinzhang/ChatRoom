@@ -5,19 +5,23 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:ChatRoomMain"
         mc:Ignorable="d"
-        Title="ChatRoom" Height="600" Width="500" HorizontalAlignment="Center" VerticalAlignment="Center">
-    <Grid>
-        <ListView x:Name="listView" HorizontalAlignment="Left" Height="357" Margin="10,36,0,0" VerticalAlignment="Top" Width="472">
-            <ListView.View>
-                <GridView>
-                    <GridViewColumn/>
-                </GridView>
-            </ListView.View>
-        </ListView>
-        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="139" Margin="10,414,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="351"/>
-        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="394,414,0,0" VerticalAlignment="Top" Width="75"/>
-        <Button x:Name="button1" Content="Button" HorizontalAlignment="Left" Margin="394,482,0,0" VerticalAlignment="Top" Width="75"/>
-        <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
+        Title="ChatRoom" Height="700" Width="800" VerticalAlignment="Center" WindowStartupLocation="CenterScreen" HorizontalAlignment="Center">
+    <Grid Margin="0,0,0,-2">
+        <Grid.Background>
+            <ImageBrush ImageSource="Heads/ChatFrame.jpg"/>
+        </Grid.Background>
+        <TextBox x:Name="textBox1" HorizontalAlignment="Left" Height="88" Margin="74,499,0,0" TextWrapping="Wrap" Text="TextBox" VerticalAlignment="Top" Width="649" BorderBrush="White"/>
+        <Button x:Name="button" Content="Button" HorizontalAlignment="Left" Margin="386,522,0,0" VerticalAlignment="Top" Width="75"/>
+        <Button x:Name="button1" Content="Button" Margin="67,613,662,34" Width="50" BorderBrush="White" Height="20">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="White" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Label x:Name="UserNameLabel" Content="nameLabel" HorizontalAlignment="Left" Margin="74,54,0,0" VerticalAlignment="Top" FontFamily="Comic Sans MS" FontWeight="Bold" Foreground="#FF383838" FontSize="14"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="410" Margin="74,80,0,0" VerticalAlignment="Top" Width="649" BorderBrush="White"/>
 
     </Grid>
 </Window>
