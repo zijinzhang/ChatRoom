@@ -38,7 +38,7 @@ namespace ChatRoomMain
             }
             ImageBrush myBrush = new ImageBrush();
             myBrush.ImageSource = new BitmapImage(new Uri(@"C:\Users\yujun\OneDrive\Pictures\374167366961355821.jpg", UriKind.Absolute));
-            this.Background = null;
+            this.Background = myBrush;
         }
     }
 }
