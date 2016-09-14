@@ -29,7 +29,7 @@ namespace ChatRoomMain
         private void Login(object sender, RoutedEventArgs e)
         {
             ImageBrush myBrush = new ImageBrush();
-            myBrush.ImageSource = new BitmapImage(new Uri(@"C:\Sources\TFS\OnlineChatRoom\Heads\Fangyang.png", UriKind.Absolute));
+            myBrush.ImageSource = new BitmapImage(new Uri(@"C:\Users\yujun\OneDrive\Pictures\374167366961355821.jpg", UriKind.Absolute));
             this.Background = null;
         }
     }
