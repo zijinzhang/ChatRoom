@@ -9,10 +9,11 @@
     <Grid>
         <TextBox x:Name="messageBox" HorizontalAlignment="Left" Height="139" Margin="10,414,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="351" KeyDown="messageBox_KeyDown"/>
         <Button x:Name="Send" Content="Send" HorizontalAlignment="Left" Margin="394,414,0,0" VerticalAlignment="Top" Width="75" Click="Send_Click"/>
-        <Button x:Name="RecallButton" Content="Button" HorizontalAlignment="Left" Margin="394,482,0,0" VerticalAlignment="Top" Width="75" Click="RecallButton_Click"/>
+        <Button x:Name="RecallButton" Content="Recall" HorizontalAlignment="Left" Margin="394,482,0,0" VerticalAlignment="Top" Width="75" Click="RecallButton_Click"/>
 
         <Label x:Name="label" Content="Label" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top"/>
         <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="368" Margin="10,36,0,0" VerticalAlignment="Top" Width="459"/>
+        <Button x:Name="Log_out" Content="Log out" HorizontalAlignment="Left" Margin="394,541,0,0" VerticalAlignment="Top" Width="75" Click="Log_out_Click"/>
 
     </Grid>
 </Window>
