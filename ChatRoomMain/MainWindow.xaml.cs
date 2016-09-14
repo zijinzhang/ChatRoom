@@ -27,7 +27,8 @@ namespace ChatRoomMain
 
         private void Login(object sender, RoutedEventArgs e)
         {
-            ImageSource a = null;
+
+            textBox.Text = "dasdf";
         }
     }
 }
