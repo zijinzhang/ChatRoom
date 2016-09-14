@@ -27,6 +27,7 @@ namespace ChatRoomMain
         private string name;
         // Save the previous message been sent.
         private string preMessage;
+        int count = 0;
 
         public ChatRoom(string name)
         {
@@ -54,8 +55,9 @@ namespace ChatRoomMain
         private void Send_Click(object sender, RoutedEventArgs e) {
             if (this.messageBox.Text != "") {
                 ChatRoomSe1rvicesClient addMessage = new ChatRoomSe1rvicesClient();
+                count++;
                 string message = this.messageBox.Text;
-                string newMessage = $"{name}: {message}";
+                string newMessage = $"{name}: {message} {count}";
                 addMessage.Add(newMessage);
                 this.listBox.Items.Add(newMessage);
                 preMessage = newMessage;
