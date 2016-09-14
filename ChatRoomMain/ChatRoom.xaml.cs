@@ -28,5 +28,13 @@ namespace ChatRoomMain
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
         }
 
+        private void Send_Click(object sender, RoutedEventArgs e) {
+            ChatRoomServices addMessage = new ChatRoomServices(); 
+            string message = this.messageBox.Text;
+            string newMessage = $"{name}: {message}";
+            addMessage.Add(newMessage);
+            this.listBox.Items.Add(newMessage);
+            messageBox.Text = "";
+        }
     }
 }
