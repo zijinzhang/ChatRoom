@@ -6,10 +6,10 @@
         xmlns:local="clr-namespace:ChatRoomMain"
         mc:Ignorable="d"
         Title="MainWindow" Height="541" Width="653" Icon="Heads/Icon.png" HorizontalAlignment="Center" VerticalAlignment="Center" ResizeMode="NoResize" Foreground="White">
+    <Window.Background>
+        <ImageBrush ImageSource="Heads/welcomeback.jpg"/>
+    </Window.Background>
     <Grid x:Name="LoginGrid">
-        <Grid.Background>
-            <ImageBrush ImageSource="Heads/welcomeback.jpg"/>
-        </Grid.Background>
         <Grid.ColumnDefinitions>
             <ColumnDefinition/>
         </Grid.ColumnDefinitions>
