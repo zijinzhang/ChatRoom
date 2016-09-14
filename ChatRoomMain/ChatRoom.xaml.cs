@@ -21,6 +21,7 @@ namespace ChatRoomMain
     public partial class ChatRoom : Window
     {
         private string name;
+        
         public ChatRoom(string name)
         {
             InitializeComponent();
@@ -29,12 +30,14 @@ namespace ChatRoomMain
         }
 
         private void Send_Click(object sender, RoutedEventArgs e) {
-            ChatRoomServices addMessage = new ChatRoomServices(); 
-            string message = this.messageBox.Text;
-            string newMessage = $"{name}: {message}";
-            addMessage.Add(newMessage);
-            this.listBox.Items.Add(newMessage);
-            messageBox.Text = "";
+            ChatRoomServices addMessage = new ChatRoomServices();
+            if (this.messageBox.Text != "") {
+                string message = this.messageBox.Text;
+                string newMessage = $"{name}: {message}";
+                addMessage.Add(newMessage);
+                this.listBox.Items.Add(newMessage);
+                messageBox.Text = "";
+            }
         }
     }
 }
