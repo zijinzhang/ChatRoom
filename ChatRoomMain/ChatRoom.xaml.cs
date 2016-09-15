@@ -27,10 +27,10 @@ namespace ChatRoomMain
         private string name;
         // Save the previous message been sent.
         private string preMessage;
-        int count = 0;
 
         public ChatRoom(string name)
         {
+            
             InitializeComponent();
             this.name = name;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -55,11 +55,10 @@ namespace ChatRoomMain
         private void Send_Click(object sender, RoutedEventArgs e) {
             if (this.messageBox.Text != "") {
                 ChatRoomSe1rvicesClient addMessage = new ChatRoomSe1rvicesClient();
-                count++;
                 string message = this.messageBox.Text;
-                string newMessage = $"{name}: {message} {count}";
+                string newMessage = $"{name}: {message}";
                 addMessage.Add(newMessage);
-                this.listBox.Items.Add(newMessage);
+                //this.listBox.Items.Add(newMessage);
                 preMessage = newMessage;
                 messageBox.Text = "";
                 this.RecallButton.IsEnabled = true;
