@@ -46,7 +46,7 @@ namespace ChatRoomMain
             IEnumerable<string> messages = new LinkedList<string>();
             messages = CRS.ShowMessage();
             foreach (var item in messages) {
-            listBox.Items.Add(item);
+                listBox.Items.Add(item);
             }
         }
 
@@ -61,6 +61,7 @@ namespace ChatRoomMain
                 preMessage = newMessage;
                 messageBox.Text = "";
                 this.RecallButton.IsEnabled = true;
+                Timer_Tick(null, null);
             }
         }
 
@@ -71,6 +72,7 @@ namespace ChatRoomMain
             service.Delete(preMessage);
             preMessage = "";
             this.RecallButton.IsEnabled = false;
+            Timer_Tick(null, null);
         }
 
         //send message when press Enter + control
