@@ -30,7 +30,6 @@ namespace ChatRoomMain
 
         public ChatRoom(string name)
         {
-            
             InitializeComponent();
             this.name = name;
             WindowStartupLocation = WindowStartupLocation.CenterScreen;
@@ -39,6 +38,7 @@ namespace ChatRoomMain
             timer.Interval = new TimeSpan(0, 0, 1);
             timer.Start();
             timer.Tick += Timer_Tick;
+            UserNameLabel.Content = $"Welcome back {name}!!";
         }
 
         private void Timer_Tick(object sender, EventArgs e) {
@@ -58,7 +58,7 @@ namespace ChatRoomMain
                 string message = this.messageBox.Text;
                 string newMessage = $"{name}: {message}";
                 addMessage.Add(newMessage);
-                //this.listBox.Items.Add(newMessage);
+               // this.listBox.Items.Add(newMessage);
                 preMessage = newMessage;
                 messageBox.Text = "";
                 this.RecallButton.IsEnabled = true;
@@ -82,8 +82,10 @@ namespace ChatRoomMain
         }
 
         private void Log_out_Click(object sender, RoutedEventArgs e) {
+            ChatRoomSe1rvicesClient closeButton = new ChatRoomSe1rvicesClient();
             MainWindow mainWindows = new MainWindow();
             App.Current.MainWindow = mainWindows;
+            closeButton.Logout(name);
             this.Close();
             mainWindows.Show();
         }
