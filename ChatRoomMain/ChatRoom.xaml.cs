@@ -86,7 +86,7 @@ namespace ChatRoomMain
 
         //send message when press Enter + control
         private void messageBox_KeyDown(object sender, KeyEventArgs e) {
-            if (e.Key == Key.Enter && (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control){
+            if (e.Key == Key.Enter){
                 Send_Click(sender, e);
             }
         }

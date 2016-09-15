@@ -10,7 +10,7 @@
         <ImageBrush ImageSource="Heads/ChatFrame.jpg"/>
     </Window.Background>
     <Grid>
-        <TextBox x:Name="messageBox" HorizontalAlignment="Left" Height="113" Margin="84,526,0,0" BorderThickness="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="730" KeyDown="messageBox_KeyDown" FontFamily="Comic Sans MS" FontSize="16"/>
+        <TextBox x:Name="messageBox" HorizontalAlignment="Left" Height="36" Margin="84,567,0,0" BorderThickness="0" TextWrapping="Wrap" VerticalAlignment="Top" Width="730" KeyDown="messageBox_KeyDown" FontFamily="Comic Sans MS" FontSize="16"/>
         <Button x:Name="Send" Content="Send" Margin="84,0,0,41" VerticalAlignment="Bottom" Height="17" BorderThickness="0" Foreground="#FF252424" Background="White" BorderBrush="White" Width="56" HorizontalAlignment="Left" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" FontFamily="Comic Sans MS" FontWeight="Bold" Click="Send_Click"/>
         <Button x:Name="RecallButton" Content="Recall" VerticalAlignment="Bottom" BorderThickness="0" Height="17" Foreground="#FF252424" BorderBrush="White" Width="56" TextOptions.TextHintingMode="Fixed" FontFamily="Comic Sans MS" FontWeight="Bold" Margin="247,0,588,36" Background="White" Click="RecallButton_Click"/>
 
