@@ -47,7 +47,7 @@ namespace ChatRoomMain
             try {
                 messages = CRS.ShowMessage();
             } catch (Exception exc) {
-                MessageBox.Show("502 Bad Gateway, please Logout.");
+                MessageBox.Show("Bad gateway, please try again.");
                 ChatRoomSe1rvicesClient closeButton = new ChatRoomSe1rvicesClient();
                 closeButton.Logout(name);
                 this.Close();
