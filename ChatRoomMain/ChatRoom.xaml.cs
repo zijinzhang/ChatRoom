@@ -44,7 +44,14 @@ namespace ChatRoomMain
             listBox.Items.Clear();
             ChatRoomSe1rvicesClient CRS = new ChatRoomSe1rvicesClient();
             IEnumerable<string> messages = new LinkedList<string>();
-            messages = CRS.ShowMessage();
+            try {
+                messages = CRS.ShowMessage();
+            } catch (Exception exc) {
+                MessageBox.Show("502 Bad Gateway, please Logout.");
+                ChatRoomSe1rvicesClient closeButton = new ChatRoomSe1rvicesClient();
+                closeButton.Logout(name);
+                this.Close();
+            }
             foreach (var item in messages) {
                 listBox.Items.Add(item);
             }
