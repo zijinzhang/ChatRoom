@@ -48,6 +48,8 @@ namespace ChatRoomMain
             foreach (var item in messages) {
                 listBox.Items.Add(item);
             }
+            listBox.SelectedIndex = listBox.Items.Count - 1;
+            listBox.ScrollIntoView(listBox.SelectedItem);
         }
 
         //send message when click send button
