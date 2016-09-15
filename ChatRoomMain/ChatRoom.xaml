@@ -15,7 +15,7 @@
         <Button x:Name="RecallButton" Content="Recall" VerticalAlignment="Bottom" BorderThickness="0" Height="17" Foreground="#FF252424" BorderBrush="White" Width="56" TextOptions.TextHintingMode="Fixed" FontFamily="Comic Sans MS" FontWeight="Bold" Margin="247,0,588,36" Background="White" Click="RecallButton_Click"/>
 
         <Label x:Name="UserNameLabel" Content="nameLabel" HorizontalAlignment="Left" Margin="364,51,0,0" VerticalAlignment="Top" FontFamily="Lucida Calligraphy" FontWeight="Bold" Foreground="#FF383838" FontSize="14"/>
-        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="406" Margin="84,80,0,0" VerticalAlignment="Top" BorderThickness="0" Width="730" FontFamily="Comic Sans MS" FontSize="16"/>
+        <ListBox x:Name="listBox" HorizontalAlignment="Left" Height="406" Margin="69,80,0,0" VerticalAlignment="Top" BorderThickness="0" Width="730" FontFamily="Comic Sans MS" FontSize="16" IsEnabled="False"/>
         <Button x:Name="Log_out" Content="Quit" VerticalAlignment="Bottom" Height="16.6" BorderThickness="0" Foreground="#FF252424" Background="White" BorderBrush="White" TextOptions.TextHintingMode="Fixed" FontFamily="Comic Sans MS" FontWeight="Bold" Margin="642,0,191,41.5" Width="54" Click="Log_out_Click"/>
 
 
