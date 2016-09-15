@@ -44,7 +44,14 @@ namespace ChatRoomMain
             listBox.Items.Clear();
             ChatRoomSe1rvicesClient CRS = new ChatRoomSe1rvicesClient();
             IEnumerable<string> messages = new LinkedList<string>();
-            messages = CRS.ShowMessage();
+            try {
+                messages = CRS.ShowMessage();
+            } catch (Exception exc) {
+                MessageBox.Show("Bad gateway, please try again.");
+                ChatRoomSe1rvicesClient closeButton = new ChatRoomSe1rvicesClient();
+                closeButton.Logout(name);
+                this.Close();
+            }
             foreach (var item in messages) {
                 listBox.Items.Add(item);
             }
@@ -79,7 +86,7 @@ namespace ChatRoomMain
 
         //send message when press Enter + control
         private void messageBox_KeyDown(object sender, KeyEventArgs e) {
-            if (e.Key == Key.Enter && (Keyboard.Modifiers & ModifierKeys.Control) == ModifierKeys.Control){
+            if (e.Key == Key.Enter){
                 Send_Click(sender, e);
             }
         }
